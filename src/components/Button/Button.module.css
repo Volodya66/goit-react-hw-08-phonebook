@@ -1,0 +1,18 @@
+.style{
+    border: none;
+    background-color: rgb(35, 183, 54);
+    border-radius: 6px;
+    display: flex;
+    padding: 10px 15px;
+    transition: transform 0.6s linear ;
+}
+
+.style:hover{
+background-color: rgb(2, 7, 2);
+color: white;
+transition-property: background-color,color;
+transition-duration: 700ms;
+transition-timing-function: linear;
+transform: scale(0.9);
+transition: transform 0.9s linear;
+}

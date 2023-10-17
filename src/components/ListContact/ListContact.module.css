@@ -1,0 +1,26 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    width: 308px;
+    gap: 20px;
+    max-height: 312px;
+    overflow: auto;
+}
+
+.item{
+    display: flex;
+    /* gap: 40px; */
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 6px;
+
+}
+
+.item:hover{
+    box-shadow: 2px -2px 26px 5px rgba(16, 179, 32, 0.59);
+        -webkit-box-shadow: 2px -2px 26px 5px rgba(16, 179, 32, 0.59);
+        -moz-box-shadow: 2px -2px 26px 5px rgba(16, 179, 32, 0.59);
+}
