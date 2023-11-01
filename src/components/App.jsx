@@ -18,11 +18,9 @@ export default function App  () {
   
 const [contact, setContact] = useState(() => {
  const dataLocalStorage = localStorage.getItem("contacts list");
-  if (dataLocalStorage ) {
-  return JSON.parse(dataLocalStorage);
-  } else {
-   return contactLists
-    }
+  
+ return JSON.parse(dataLocalStorage) ??contactLists;
+
  });
  const [filter, setFilter] =useState('');
  
