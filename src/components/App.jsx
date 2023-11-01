@@ -16,7 +16,7 @@ let contactLists = [
 
 export default function App  () {
   
-const [contact, updateContact] = useState(() => {
+const [contact, setContact] = useState(() => {
  const dataLocalStorage = localStorage.getItem("contacts list");
   if (dataLocalStorage ) {
   return JSON.parse(dataLocalStorage);
@@ -24,8 +24,8 @@ const [contact, updateContact] = useState(() => {
    return contactLists
     }
  });
-const [filter, newFilter] =useState('');
-
+ const [filter, setFilter] =useState('');
+ 
   
 useEffect(() => {
 localStorage.setItem("contacts list",JSON.stringify(contact));
@@ -42,12 +42,12 @@ if (condition) {
   return
 };
    
-  updateContact([...contact, newContact]);
+  setContact([...contact, newContact]);
 };
 
 const filterContacts = (evt) => {
   const param = evt.target.value;
-  newFilter(param)
+  setFilter(param)
 }
 
 const actualNames=()=>{
@@ -60,7 +60,7 @@ const actualNames=()=>{
 const handlerContactDelete = (evt) => {
 const deleteContactId = evt.target.getAttribute('id');
 const filteredContacts = contact.filter(contact => contact.id !== deleteContactId);
-updateContact(filteredContacts) ;
+setContact(filteredContacts) ;
 return
 }   
    
