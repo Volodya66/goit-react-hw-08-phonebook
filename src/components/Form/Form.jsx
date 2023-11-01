@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 import { Formik, Form } from 'formik';
 import { nanoid } from 'nanoid'
 import * as Yup from "yup";
@@ -14,29 +14,26 @@ const schema = Yup.object().shape({
     number:Yup.number().required()
 })
 
-class ContactForm extends Component{
-    // state = {
-    //     name: '',
-    //     number: ''
-    // }
-    
-handleSubmit = (values, action) => {
-//   console.log(this.props)
+
+
+export default function ContactForm ({newContact})  {
+
+ const handleSubmit = (values, action) => {
+
   const { name,number } = values
     if (name) {
-    const newContact = {
+    const newContacts = {
       id: nanoid(),
       name: name,
       number: number
     };
 
-    const foo = () => this.props.newContact(newContact);
+    const foo = () => newContact(newContacts);
     foo();
   }
     action.resetForm();
 }
-    
-    render() {
+
     return (
     <div className={css.wrapper}>
     <Formik
@@ -45,7 +42,7 @@ handleSubmit = (values, action) => {
         name: '',
         number: ''
     }}
-        onSubmit={this.handleSubmit}>
+        onSubmit={handleSubmit}>
         
     <Form  autoComplete="off">
             
@@ -55,8 +52,6 @@ handleSubmit = (values, action) => {
     </Formik> 
     </div>
     )
-    }
-}
 
+};
 
-export default ContactForm;

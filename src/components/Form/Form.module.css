@@ -1,7 +1,13 @@
 .wrapper{
+cursor: grab;
+
     padding: 30px;
-    border: 1px solid black;
+    border: 12px groove rgba(0, 243, 125, 0.27);
     border-radius: 24px;
     width: 300px;
     height: 230px;
+
+    box-shadow: 4px 4px 14px 6px rgba(187, 251, 209, 0.45);
+        -webkit-box-shadow: 4px 4px 14px 6px rgba(187, 251, 209, 0.45);
+        -moz-box-shadow: 4px 4px 14px 6px rgba(187, 251, 209, 0.45);
 }

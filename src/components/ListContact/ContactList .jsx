@@ -4,7 +4,7 @@ import css from './ListContact.module.css'
 
 export default function ContactList ({ contacts,deleteContact }) {
    
-    // console.log(contacts)
+    
     return (
         <ul className={css.list}>
             {contacts.map(contact => 
