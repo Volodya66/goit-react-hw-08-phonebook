@@ -26,41 +26,41 @@ const [contact, setContact] = useState(() => {
  
   
 useEffect(() => {
-localStorage.setItem("contacts list",JSON.stringify(contact));
+// localStorage.setItem("contacts list",JSON.stringify(contact));
 },[contact])
   
-const pushedContacts = (newContact) => {
- const arrContacts = [...contact];
+// const pushedContacts = (newContact) => {
+//  const arrContacts = [...contact];
 
- const namePerson = newContact.name;
- const condition = arrContacts.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
+//  const namePerson = newContact.name;
+//  const condition = arrContacts.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
  
-if (condition) {
-  alert(`${namePerson} is already in contacts`);
-  return
-};
+// if (condition) {
+//   alert(`${namePerson} is already in contacts`);
+//   return
+// };
    
-  setContact([...contact, newContact]);
-};
+//   setContact([...contact, newContact]);
+// };
 
 const filterContacts = (evt) => {
   const param = evt.target.value;
   setFilter(param)
 }
 
-const actualNames=()=>{
-  const arrContacts = [...contact];
-  const contactsFiltered = filter.toLowerCase();
-  const filteredContacts = arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered));
-  return filteredContacts;
-}
+// const actualNames=()=>{
+//   const arrContacts = [...contact];
+//   const contactsFiltered = filter.toLowerCase();
+//   const filteredContacts = arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered));
+//   return filteredContacts;
+// }
   
-const handlerContactDelete = (evt) => {
-const deleteContactId = evt.target.getAttribute('id');
-const filteredContacts = contact.filter(contact => contact.id !== deleteContactId);
-setContact(filteredContacts) ;
-return
-}   
+// const handlerContactDelete = (evt) => {
+// const deleteContactId = evt.target.getAttribute('id');
+// const filteredContacts = contact.filter(contact => contact.id !== deleteContactId);
+// setContact(filteredContacts) ;
+// return
+// }   
    
   
    return (
@@ -70,15 +70,14 @@ return
       }} >
   
   <h2>Phone book</h2>   
-  <ContactForm
-  newContact={pushedContacts} />
+  <ContactForm />
         
   <h2>Contacts</h2>
   
   <Filter 
   value={filter} 
   parameterTracker={filterContacts} />
-  <ContactList deleteContact={handlerContactDelete}  contacts={actualNames()} />
+  <ContactList />
  
 </div>
     )

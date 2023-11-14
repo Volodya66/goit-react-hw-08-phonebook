@@ -4,6 +4,9 @@ import { Formik, Form } from 'formik';
 import { nanoid } from 'nanoid'
 import * as Yup from "yup";
 
+import { useDispatch ,useSelector} from 'react-redux';
+import { addNewContact } from 'redux/action';
+
 import Input from '../Input/Input'
 import Button from '../Button/Button'
 import css from './Form.module.css'
@@ -16,10 +19,29 @@ const schema = Yup.object().shape({
 
 
 
-export default function ContactForm ({newContact})  {
+export default function ContactForm ()  {
 
+const dispatch = useDispatch();
+let contactsList = useSelector(state => state.listContacts);
+
+const pushedContacts = (newContact) => {
+
+ const namePerson = newContact.name;
+ const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
+ 
+if (condition) {
+  alert(`${namePerson} is already in contacts`);
+  return
+};
+
+ dispatch(addNewContact(newContact))
+  
+};
+  
  const handleSubmit = (values, action) => {
 
+   
+   
   const { name,number } = values
     if (name) {
     const newContacts = {
@@ -28,8 +50,7 @@ export default function ContactForm ({newContact})  {
       number: number
     };
 
-    const foo = () => newContact(newContacts);
-    foo();
+      pushedContacts(newContacts);
   }
     action.resetForm();
 }
