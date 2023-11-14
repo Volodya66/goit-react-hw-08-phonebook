@@ -19,26 +19,39 @@ let dispatch = useDispatch()
     
     console.log('contactsList: ', contactsList);
 
+useEffect(() => {
+    // const dataLocalStorage = localStorage.getItem('contacts list');
+    const storedContacts = JSON.parse(dataLocalStorage) || contactsList;
+
+    
+    dispatch(upgradeListContact(storedContacts));
+  }, [dispatch]);
+
+  useEffect(() => {
+   
+    localStorage.setItem('contacts list', JSON.stringify(contactsList));
+  }, [contactsList]);
+
     // let contacts = dataLocalStorParse ?? contactsList
     // console.log('contactsList: ', contacts);
-useEffect(() => {
-    if(!dataLocalStorParse){
-    localStorage.setItem("contacts list", JSON.stringify(contactsList));
-};
+// useEffect(() => {
+//     if(!dataLocalStorParse){
+//     localStorage.setItem("contacts list", JSON.stringify(contactsList));
+// };
 
-},[dataLocalStorParse])
+// },[dataLocalStorParse])
 
 
-useEffect(() => {
+// useEffect(() => {
     
-if (  contactsList.length  > dataLocalStorParse.length) {
-    console.log('true')
-    localStorage.setItem("contacts list", JSON.stringify(contactsList));
-    dispatch(upgradeListContact(dataLocalStorParse));
-        }
+// if (  contactsList.length  > dataLocalStorParse.length) {
+//     console.log('true')
+//     localStorage.setItem("contacts list", JSON.stringify(contactsList));
+//     dispatch(upgradeListContact(dataLocalStorParse));
+//         }
 
 
-},[contactsList])
+// },[contactsList])
    
 
     

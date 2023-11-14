@@ -4,22 +4,12 @@ import ContactForm from './Form/Form'
 import ContactList  from './ListContact/ContactList '
 import Filter from './InputFilter/InputFilter'
 
-
-let contactLists = [
-    { id: 'id-1', name: 'Alyona Udod', number: '459-12-56' },
-    {id: 'id-2', name: 'Dad', number: '443-89-12'},
-    {id: 'id-3', name: 'Mom ❤', number: '645-17-79'},
-    { id: 'id-4', name: 'Natalia Valko', number: '227-91-26' }
-]
-
-
-
 export default function App  () {
   
 const [contact, setContact] = useState(() => {
- const dataLocalStorage = localStorage.getItem("contacts list");
+//  const dataLocalStorage = localStorage.getItem("contacts list");
   
- return JSON.parse(dataLocalStorage) ??contactLists;
+//  return JSON.parse(dataLocalStorage) ??contactLists;
 
  });
  const [filter, setFilter] =useState('');
