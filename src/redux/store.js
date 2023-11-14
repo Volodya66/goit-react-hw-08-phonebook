@@ -1,4 +1,4 @@
-import { configureStore, createAction,createReducer } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 // import { rootReducer } from "./reducer";
 
 import { myReduser } from './reduser';
