@@ -12,20 +12,22 @@ export default function ContactList ({ deleteContact }) {
 let dispatch = useDispatch()
 
     let dataLocalStorage = localStorage.getItem("contacts list");
-    let dataLocalStorParse = JSON.parse(dataLocalStorage);
-    console.log('dataLocalStorParse: ', dataLocalStorParse);
+    // let dataLocalStorParse = JSON.parse(dataLocalStorage);
+    // console.log('dataLocalStorParse: ', dataLocalStorParse);
 
     let contactsList = useSelector(state => state.listContacts);
     
     console.log('contactsList: ', contactsList);
 
 useEffect(() => {
+    //  let dataLocalStorage = localStorage.getItem("contacts list");
+    // let dataLocalStorParse = JSON.parse(dataLocalStorage);
     // const dataLocalStorage = localStorage.getItem('contacts list');
     const storedContacts = JSON.parse(dataLocalStorage) || contactsList;
 
     
     dispatch(upgradeListContact(storedContacts));
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
    
