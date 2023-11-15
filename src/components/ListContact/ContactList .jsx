@@ -1,67 +1,43 @@
-import {useSelector,useDispatch} from 'react-redux'
-import {  useEffect } from 'react';
+import {useSelector, useDispatch} from 'react-redux'
 
-import { upgradeListContact } from 'redux/action';
+import {deleteContact} from '../../redux/slice'
 
 import Button from '../Button/Button'
 
 import css from './ListContact.module.css'
 
-export default function ContactList ({ deleteContact }) {
+export default function ContactList () {
 
-let dispatch = useDispatch()
+const dispatch = useDispatch()
 
-    let dataLocalStorage = localStorage.getItem("contacts list");
-    // let dataLocalStorParse = JSON.parse(dataLocalStorage);
-    // console.log('dataLocalStorParse: ', dataLocalStorParse);
-
-    let contactsList = useSelector(state => state.listContacts);
+    // state.contact.filteredContacts.length>1 ? state.contact.value : state.contact.filteredContacts
     
-    console.log('contactsList: ', contactsList);
-
-useEffect(() => {
-    //  let dataLocalStorage = localStorage.getItem("contacts list");
-    // let dataLocalStorParse = JSON.parse(dataLocalStorage);
-    // const dataLocalStorage = localStorage.getItem('contacts list');
-    const storedContacts = JSON.parse(dataLocalStorage) || contactsList;
-
+let contactsList = useSelector(state =>  state.contact.value );
+let filter = useSelector(state =>  state.filter.filter);
+// console.log('filter: ', filter);
+//     console.log('contactsList: ', contactsList);
     
-    dispatch(upgradeListContact(storedContacts));
-  }, []);
+const handlerContactDelete = (evt) => {
+const deleteContactId = evt.target.getAttribute('id');
+dispatch(deleteContact(deleteContactId));
 
-  useEffect(() => {
-   
-    localStorage.setItem('contacts list', JSON.stringify(contactsList));
-  }, [contactsList]);
-
-    // let contacts = dataLocalStorParse ?? contactsList
-    // console.log('contactsList: ', contacts);
-// useEffect(() => {
-//     if(!dataLocalStorParse){
-//     localStorage.setItem("contacts list", JSON.stringify(contactsList));
-// };
-
-// },[dataLocalStorParse])
-
-
-// useEffect(() => {
+return
+}
     
-// if (  contactsList.length  > dataLocalStorParse.length) {
-//     console.log('true')
-//     localStorage.setItem("contacts list", JSON.stringify(contactsList));
-//     dispatch(upgradeListContact(dataLocalStorParse));
-//         }
+const getContacts = (contactsList, filter) => {
+    //  arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered))
+ return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+  
+};
 
+const data = getContacts(contactsList, filter)
+// console.log('data: ', data);
 
-// },[contactsList])
-   
-
-    
     return (
         <ul className={css.list}>
-            {  contactsList.map(contact => 
+            { data.map(contact => 
                 <li className={css.item} key={contact.id}>{contact.name} :   {contact.number}
-                    <Button click={deleteContact} id={contact.id} type={'button'} text={'Delete'} /> </li>
+                    <Button click={handlerContactDelete} id={contact.id} type={'button'} text={'Delete'} /> </li>
             )}
         </ul>
         

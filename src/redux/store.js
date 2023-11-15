@@ -1,27 +1,45 @@
 import { configureStore } from '@reduxjs/toolkit'
-// import { rootReducer } from "./reducer";
 
-import { myReduser } from './reduser';
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
 
+import storage from 'redux-persist/lib/storage' 
 
-// const deleteContact = createAction('listContacts/delete',);
-// console.log('deleteContact: ', deleteContact.toString());
-// const addNewContact = createAction('listContacts/addNewContacts');
+import { filtersSlice } from './filterSlice'
+import { listContSlice } from './slice'
 
-// export const myReduser = createReducer(0, {
-    
-// [deleteContact] : (state, action)=> state + action.payload,
-// [addNewContact]: (state, action)=> state + action.payload
-    
-// })
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist:['value'],
+}
+
+const persistedReducer = persistReducer(persistConfig, listContSlice.reducer)
 
 export const store = configureStore({
     reducer : {
-        listContacts: myReduser,
-        filter: "",
+        contact: persistedReducer,
+        filter: filtersSlice.reducer,
     },
+    //? ігнорування екшинів , помилки в консолі 
+     middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
+
+export const persistor = persistStore(store)
 
 
 

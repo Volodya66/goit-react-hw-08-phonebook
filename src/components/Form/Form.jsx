@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 import * as Yup from "yup";
 
 import { useDispatch ,useSelector} from 'react-redux';
-import { addNewContact } from 'redux/action';
+import { addNewContact } from 'redux/slice'; 
 
 import Input from '../Input/Input'
 import Button from '../Button/Button'
@@ -22,12 +22,15 @@ const schema = Yup.object().shape({
 export default function ContactForm ()  {
 
 const dispatch = useDispatch();
-let contactsList = useSelector(state => state.listContacts);
+let contactsList = useSelector(state =>   state.contact.value);
+
 
 const pushedContacts = (newContact) => {
 
  const namePerson = newContact.name;
+//  console.log('namePerson: ', namePerson);
  const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
+//  console.log('condition: ', condition);
  
 if (condition) {
   alert(`${namePerson} is already in contacts`);

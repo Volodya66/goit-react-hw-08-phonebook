@@ -1,4 +1,6 @@
-import  { useState, useEffect} from 'react';
+import  { useState} from 'react';
+
+
 
 import ContactForm from './Form/Form'
 import ContactList  from './ListContact/ContactList '
@@ -6,32 +8,9 @@ import Filter from './InputFilter/InputFilter'
 
 export default function App  () {
   
-const [contact, setContact] = useState(() => {
-//  const dataLocalStorage = localStorage.getItem("contacts list");
-  
-//  return JSON.parse(dataLocalStorage) ??contactLists;
 
- });
  const [filter, setFilter] =useState('');
  
-  
-useEffect(() => {
-// localStorage.setItem("contacts list",JSON.stringify(contact));
-},[contact])
-  
-// const pushedContacts = (newContact) => {
-//  const arrContacts = [...contact];
-
-//  const namePerson = newContact.name;
-//  const condition = arrContacts.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
- 
-// if (condition) {
-//   alert(`${namePerson} is already in contacts`);
-//   return
-// };
-   
-//   setContact([...contact, newContact]);
-// };
 
 const filterContacts = (evt) => {
   const param = evt.target.value;
