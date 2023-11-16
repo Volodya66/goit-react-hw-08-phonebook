@@ -13,3 +13,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  box-sizing: border-box;
+}
+.wrapper{
+
+  width: 360px;
+ height: 640px;
+  padding: 20px;
+  background-color: #fbebeb;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleWrapper{
+  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+}
+
+.listNavigate{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.listNavigateItem {
+font-weight: 500;
+font-size: 22px;
+line-height: 26.4px;
+}
+
+.pageNavigate{
+text-decoration: none;
+font-weight: 500;
+font-size: 22px;
+line-height: 26.4px;
+color: #000000;
+}

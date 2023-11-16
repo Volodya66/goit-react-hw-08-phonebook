@@ -2,6 +2,7 @@
     /* padding: 30px; */
     display: flex;
     flex-direction: column;
+    margin-bottom: 330px;
 }
 
 p{
@@ -14,14 +15,21 @@ margin-bottom: 16px;
     margin-bottom: 10px;
 }
 
-.label:nth-child(2) {
+/* .label:nth-child(2) {
     margin-bottom: 30px;
-}
+} */
 .inp{
-    width: 100%;
-    height: 26px;
-    /* border-radius: 8px; */
-    border: none;
-    border-bottom: 1px solid black;
+    width: 320px;
+    height: 39px;
+    border-radius: 50px;
+    border: 1px solid #828282;
     outline: none;
+
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.2px;
+
+    padding: 10px 16px ;
+   
 }

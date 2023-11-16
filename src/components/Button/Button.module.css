@@ -1,21 +1,19 @@
 .style{
-    border: none;
-    background-color: rgb(35, 183, 54);
-    border-radius: 6px;
-    display: flex;
-    padding: 10px 15px;
-    transition-property: background-color;
-    transition-property: color;
-    transition-duration: 900ms;
-    transition-timing-function: linear;
+
+font-size: 16px;
+font-weight: 300;
+line-height: 19.2px;
+
+background-color: transparent;
+
+padding: 10px 50px;
+border-radius: 50px;
+
+width: 150px;
+height: 39px;
+
 }
 
-.style:hover{
-background-color: rgb(2, 7, 2);
-color: white;
-/* transition-property: background-color;
-transition-property: color;
-transition-duration: 900ms;
-transition-timing-function: linear; */
-
+.blue{
+    background-color: #41F3D3;
 }

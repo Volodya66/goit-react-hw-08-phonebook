@@ -1,53 +1,47 @@
-import  { useState} from 'react';
 
+import { Route, NavLink, Routes, Navigate } from "react-router-dom";
 
+// import Loyayt from './Loyayt/Loyayt';
+// import ContactForm from './Form/Form'
+// import ContactList  from './ListContact/ContactList '
+// import Filter from './InputFilter/InputFilter'
 
-import ContactForm from './Form/Form'
-import ContactList  from './ListContact/ContactList '
-import Filter from './InputFilter/InputFilter'
+import HomeAddContacts from "pages/HomeAddCont";
+import ContactsList from "pages/ListContact";
 
 export default function App  () {
-  
 
- const [filter, setFilter] =useState('');
- 
-
-const filterContacts = (evt) => {
-  const param = evt.target.value;
-  setFilter(param)
-}
-
-// const actualNames=()=>{
-//   const arrContacts = [...contact];
-//   const contactsFiltered = filter.toLowerCase();
-//   const filteredContacts = arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered));
-//   return filteredContacts;
-// }
-  
-// const handlerContactDelete = (evt) => {
-// const deleteContactId = evt.target.getAttribute('id');
-// const filteredContacts = contact.filter(contact => contact.id !== deleteContactId);
-// setContact(filteredContacts) ;
-// return
-// }   
-   
-  
    return (
-      <div style={{
-        display: 'flex', flexDirection: 'column',
-        alignItems: 'center'
-      }} >
+      <div className="wrapper" >
+       
+  <h1 className='titleWrapper'> Phone book </h1>
   
-  <h2>Phone book</h2>   
-  <ContactForm />
+   <ul className='listNavigate'>
+    <li className='listNavigateItem'> <NavLink  className='pageNavigate' to='/'> Add contact</NavLink></li>
+    <li className='listNavigateItem'> <NavLink className='pageNavigate' to='/contact'>Find contact</NavLink> </li>
+  </ul >
+
+       
+ <Routes >
+    
+    <Route path="/" element={ <HomeAddContacts/>} />
+    <Route path="/contact" element={ <ContactsList/>} />
+   
+    <Route path="*" element={ <Navigate to='/'/>} />
+    
+  </Routes>
+
+  {/* <Loyayt title={'Phone book'}> */}
+  {/* <h2>Phone book</h2>    */}
+  {/* <ContactForm /> */}
         
-  <h2>Contacts</h2>
+  {/* <h2>Contacts</h2> */}
   
-  <Filter 
+  {/* <Filter 
   value={filter} 
-  parameterTracker={filterContacts} />
-  <ContactList />
- 
+  parameterTracker={filterContacts} /> */}
+  {/* <ContactList /> */}
+ {/* </Loyayt> */}
 </div>
     )
 }
