@@ -63,8 +63,10 @@ return
     action.resetForm();
 }
 
-const onClick = (resetForm) => {
-  resetForm();
+const onClickCancel = () => {
+  console.log('hi')
+alert('Хиии, потицяй трошки пальчиками, я лінива телефонна книга')
+
 }
 
     return (
@@ -81,7 +83,7 @@ const onClick = (resetForm) => {
             
     <Input/>
     <ul className={css.listBtn}>
-      <li><Button onClick={({ resetForm }) => onClick(resetForm)} type={'button'} styles1={'style'} text={'Cancel'}/></li>
+      <li><Button onClick={onClickCancel} type={'button'} styles1={'style'} text={'Cancel'}/></li>
       <li><Button type={'submit'} styles1={'style'} styles2={'blue'} text={'Save'}/></li>
     </ul>
     
