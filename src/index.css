@@ -64,3 +64,14 @@ font-size: 22px;
 line-height: 26.4px;
 color: #000000;
 }
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #828282;
+  /* Колір полоси скролбару */
+  border-radius: 3px;
+  /* Радіус кутів */
+}
