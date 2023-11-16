@@ -9,6 +9,9 @@ background-color: transparent;
 padding: 10px 50px;
 border-radius: 50px;
 
+border: 1px solid #828282;
+color: #000000;
+
 width: 150px;
 height: 39px;
 
@@ -16,4 +19,5 @@ height: 39px;
 
 .blue{
     background-color: #41F3D3;
+    color: #000000;
 }
