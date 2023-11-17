@@ -34,7 +34,7 @@ margin-bottom: 16px;
    
 }
 
-@keyframes floatUpDown {
+/* @keyframes floatUpDown {
 
     0%,
     100% {
@@ -114,4 +114,4 @@ margin-bottom: 16px;
 
 .animationDelay {
     animation: floatUpDown 2s infinite;
-}
+} */

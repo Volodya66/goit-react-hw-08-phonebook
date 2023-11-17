@@ -11,11 +11,11 @@ export default function Input() {
          <Field  placeholder='Name' className={css.inp}  type="text" name="name" />
          <ErrorMessage  name='name'/>
       </label>
-      <ul className={css.listNum}>
+      {/* <ul className={css.listNum}>
        {Array.from('380954835493').map((digit, index) => (
        <li key={index} className={`${css.itemNum}  ${css[`animationDelay${index + 1}`]}`}>{digit}</li>
        ))}
-      </ul>
+      </ul> */}
       <label className={css.label} htmlFor="number">
           {/* <p>Number</p>   */}
          <Field className={css.inp}  placeholder='Number' type="tel" name="number" />
