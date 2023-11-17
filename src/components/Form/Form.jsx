@@ -82,6 +82,26 @@ alert('Хиии, потицяй трошки пальчиками, я лінив
     <Form  className={css.forma} autoComplete="off">
             
     <Input/>
+    {/* <ul className={css.listNum}>
+      <li className={css.itemNum} >3</li>
+      <li className={css.itemNum} >8</li>
+      <li className={css.itemNum} >0</li>
+      <li className={css.itemNum} >9</li>
+      <li className={css.itemNum} >5</li>
+      <li className={css.itemNum} >4</li>
+      <li className={css.itemNum}> 3</li>
+      <li className={css.itemNum} >5</li>
+      <li className={css.itemNum} >4</li>
+      <li className={css.itemNum} >8</li>
+      <li className={css.itemNum} >3</li>
+      <li className={css.itemNum}> 9</li>
+    </ul> */}
+            
+ {/* <ul className={css.listNum}>
+  {Array.from('380954835493').map((digit, index) => (
+    <li key={index} className={`${css.itemNum}  ${css[`animationDelay${index + 1}`]}`}>{digit}</li>
+  ))}
+</ul> */}
     <ul className={css.listBtn}>
       <li><Button onClick={onClickCancel} type={'button'} styles1={'style'} text={'Cancel'}/></li>
       <li><Button type={'submit'} styles1={'style'} styles2={'blue'} text={'Save'}/></li>

@@ -23,3 +23,116 @@ justify-content: space-between;
     /* align-self:flex-end */
    
 }
+
+.listNum{
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    column-gap: 8px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.itemNum{
+    font-size: 20px;
+}
+
+@keyframes bounceUpDown {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* @keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.listNum {
+    display: flex;
+    justify-content: center;
+    column-gap: 6px;
+    padding: 0;
+    list-style: none;
+}
+
+.itemNum {
+    font-size: 20px;
+    margin: 5px;
+    animation: floatUpDown 3s infinite;
+}
+
+
+.animationDelay1 {
+    animation-delay: 0.2s;
+}
+
+.animationDelay2 {
+    animation-delay: 0.4s;
+}
+
+.animationDelay3 {
+    animation-delay: 0.6s;
+}
+
+.animationDelay4 {
+    animation-delay: 0.8s;
+}
+
+.animationDelay5 {
+    animation-delay: 1s;
+}
+
+.animationDelay6 {
+    animation-delay: 1.2s;
+}
+
+.animationDelay7 {
+    animation-delay: 1.4s;
+}
+
+.animationDelay8 {
+    animation-delay: 1.6s;
+}
+
+.animationDelay9 {
+    animation-delay: 1.8s;
+}
+
+.animationDelay10 {
+    animation-delay: 2s;
+}
+
+.animationDelay11 {
+    animation-delay: 2.4s;
+}
+
+.animationDelay12 {
+    animation-delay: 2.6s;
+}
+
+
+.animationDelay {
+    animation: floatUpDown 2s infinite;
+} */
