@@ -47,7 +47,8 @@ const pushedContacts = (newContact) => {
     const newContacts = {
       id: nanoid(),
       name: name,
-      number: number
+      number: number,
+      favorite:false
     };
 
 const namePerson = newContacts.name;
