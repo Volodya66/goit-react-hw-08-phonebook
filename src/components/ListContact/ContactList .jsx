@@ -23,7 +23,7 @@ let filter = useSelector(state =>  state.filter.filter);
     
 const handlerContactDelete = (evt) => {
 const deleteContactId = evt.currentTarget.getAttribute("id");
-console.log('deleteContactId: ', deleteContactId);
+// console.log('deleteContactId: ', deleteContactId);
 dispatch(deleteContact(deleteContactId));
 
 return
@@ -36,7 +36,7 @@ const getContacts = (contactsList, filter) => {
 };
 
 const data = getContacts(contactsList, filter)
-console.log('data: ', data);
+// console.log('data: ', data);
 
     return (
         <ul className={css.list}>
