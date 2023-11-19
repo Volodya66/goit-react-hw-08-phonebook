@@ -1,6 +1,6 @@
 import {useSelector, useDispatch} from 'react-redux'
 
-import {deleteContact} from '../../redux/slice'
+import {deleteContact,favoriteContact} from '../../redux/slice'
 
 // import Button from '../Button/Button'
 import BtnSvg from 'components/Button/ButtonSvg'
@@ -17,6 +17,7 @@ const dispatch = useDispatch()
     // state.contact.filteredContacts.length>1 ? state.contact.value : state.contact.filteredContacts
     
 let contactsList = useSelector(state =>  state.contact.value );
+// console.log('contactsList: ', contactsList);
 let filter = useSelector(state =>  state.filter.filter);
 // console.log('filter: ', filter);
 //     console.log('contactsList: ', contactsList);
@@ -30,17 +31,35 @@ return
 }
     
 const getContacts = (contactsList, filter) => {
+    //? [...scores].sort((a, b) => a - b)
     //  arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered))
- return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
-  
+return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+
+
 };
 
-const data = getContacts(contactsList, filter)
-// console.log('data: ', data);
+const addFavorite = (evt) =>{
+const contactIdFavorite = evt.currentTarget.getAttribute("id");
+const objFavorite =  contactsList.find(contact => contact.id === contactIdFavorite);
+// console.log('objFavorite beforeeeeeeee: ', objFavorite);
+    // evt.currentTarget.classList.toggle('favorite')
+    dispatch(favoriteContact({id : contactIdFavorite, status : objFavorite.favorite}))
+// if(!objFavorite.favorite){
+//     console.log(objFavorite.favorite)
+//     evt.currentTarget.classList.toggle('favorite')
+// } else {
+//     evt.currentTarget.classList.toggle('favorite')
+// }
 
-    return (
+}   
+
+const data = getContacts(contactsList, filter);
+const filterAB = [...data].sort((firstStudent, secondStudent) =>firstStudent.name.localeCompare(secondStudent.name));
+
+return (
+
         <ul className={css.list}>
-            { data.map(contact => 
+            { filterAB.map(contact => 
                 <li className={css.item} key={contact.id}>
                     <ul className={css.listDataUser}>
                         <li><p className={css.name}>     {contact.name}</p></li>
@@ -50,9 +69,19 @@ const data = getContacts(contactsList, filter)
                     
                     {/* <Button click={handlerContactDelete} id={contact.id} type={'button'} text={'Delete'} /> */}
                     <ul className={css.listBtn}>
-                        <li> <BtnSvg> <ImagesPhoneCall className={css.svg} width='18' height='18'/> </BtnSvg></li>
-                        <li><BtnSvg><ImagesStar className={css.svg} width='18' height='18'/> </BtnSvg></li>
-                        <li><BtnSvg><ImagesDelete onClick={handlerContactDelete} id={contact.id} className={css.svg} width='18' height='18'/> </BtnSvg></li>
+                        <li> <BtnSvg>
+                            <ImagesPhoneCall className={css.svg }  width='18' height='18' />
+                        </BtnSvg>
+                        </li>
+                        <li><BtnSvg>
+                            <ImagesStar onClick={addFavorite} className={css.svg + (contact.favorite ? ' favorite'  : '')} id={contact.id} width='18' height='18'/> 
+                        </BtnSvg>
+                        </li>
+                        <li><BtnSvg>
+                            <ImagesDelete onClick={handlerContactDelete} id={contact.id}
+                                className={css.svg} width='18' height='18' /> 
+                        </BtnSvg>
+                        </li>
                         
                     </ul>
                 </li>

@@ -26,10 +26,26 @@ export const listContSlice = createSlice({
 
         state.value.splice(idx, 1);
         },
+        favoriteContact: (state, action) => {
+        // console.log('action.payload: ', action.payload);
+        
+        // const idx = state.value.findIndex(el => el.id === action.payload.id)
+        // console.log('idx: ', idx);
+        const idx = state.value.findIndex(el => el.id === action.payload.id);
+            
+            // Перевірка, чи існує об'єкт за вказаним індексом
+            if (idx !== -1) {
+                // Зміна значення властивості 'favorite' на протилежне
+                state.value[idx].favorite = !action.payload.status;
+            }
+        
+            
+        
+        }
 
     },
 });
 
-export const { addNewContact ,deleteContact,setFilter } = listContSlice.actions // той же екшн 
+export const { addNewContact ,deleteContact,setFilter,favoriteContact } = listContSlice.actions // той же екшн 
 
     

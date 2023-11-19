@@ -79,3 +79,7 @@ color: #000000;
   border-radius: 3px;
   /* Радіус кутів */
 }
+
+.favorite {
+  fill: #41F3D3
+}
