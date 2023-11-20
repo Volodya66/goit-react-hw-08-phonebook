@@ -44,12 +44,12 @@ const handleSubmit = (values, action) => {
     favorite: false
   };
 console.log('newContacts: ', newContacts);
-  // const namePerson = newContacts.name;
-  // const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
-  // if (condition) {
-  //  alert(`${namePerson} is already in contacts`);
-  //  return
-  // };
+  const namePerson = newContacts.name;
+  const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
+  if (condition) {
+   alert(`${namePerson} is already in contacts`);
+   return
+  };
 
     dispatch(contactsAPI.fetchAddNewContact(newContacts))
         
