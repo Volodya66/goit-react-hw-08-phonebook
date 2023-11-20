@@ -7,7 +7,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 //? автоматично добавляє pending/fulfilled/rejected ,
 //? якшо немає помилки верне сонтакти якшо помилка, викине в консоль
 
-export const CreateFetchContacts = createAsyncThunk(
+export const createFetchContacts = createAsyncThunk(
     'contacts/fetchContacts',
     async (_, { rejectWidthValue }) => {
         try {

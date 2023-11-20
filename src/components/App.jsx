@@ -16,7 +16,7 @@ export default function App  () {
 const dispatch = useDispatch()
 
 useEffect(() => {
-dispatch(contactOperation.CreateFetchContacts())   
+dispatch(contactOperation.createFetchContacts())   
 },[dispatch])
 
    return (
