@@ -72,7 +72,8 @@ const data = getContacts(contactsList, filter);
         firstStudent.name.localeCompare(secondStudent.name));
 
 return (
-
+    <>
+        {/* {loading && ()}  */}
         <ul className={css.list}>
             { filterAB.map(contact => 
                 <li className={css.item} key={contact.id}>
@@ -107,6 +108,6 @@ return (
             )}
         </ul>
         
-        
+       </> 
     )
 }
