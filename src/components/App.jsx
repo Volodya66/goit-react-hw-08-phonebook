@@ -1,6 +1,8 @@
 
 import { Route, NavLink, Routes, Navigate } from "react-router-dom";
-
+import { useEffect } from 'react'
+import {  useDispatch } from 'react-redux'
+import * as contactOperation from 'redux/contact/contactOperations'
 // import Loyayt from './Loyayt/Loyayt';
 // import ContactForm from './Form/Form'
 // import ContactList  from './ListContact/ContactList '
@@ -10,6 +12,12 @@ import HomeAddContacts from "pages/HomeAddCont";
 import ContactsList from "pages/ListContact";
 
 export default function App  () {
+
+const dispatch = useDispatch()
+
+useEffect(() => {
+dispatch(contactOperation.CreateFetchContacts())   
+},[dispatch])
 
    return (
       <div className="wrapper" >
