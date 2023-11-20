@@ -9,14 +9,10 @@ export default function Filter() {
 const dispatch = useDispatch()
 
 const actualNames=(evt)=>{
-    const inputValue = evt.target.value
-    // console.log('imputValue: ', imputValue);
+    const inputValue = evt.target.value.toLowerCase();
     dispatch(setStatusFilter(inputValue));
     return
-//   const arrContacts = [...contact];
-//   const contactsFiltered = filter.toLowerCase();
-//   const filteredContacts = arrContacts.filter(contact => contact.name.toLowerCase().includes(contactsFiltered));
-//   return filteredContacts;
+
 }
 
 

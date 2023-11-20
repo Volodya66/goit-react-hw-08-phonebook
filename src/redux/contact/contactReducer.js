@@ -55,7 +55,7 @@ const contact = createSlice({
     .addCase(newContact.fulfilled, (state, action) => {
         console.log('action: ', action);
         console.log('action: ', action);
-    // state.contact.push(action.payload);   
+    state.contact.push(action.payload);   
     })
   }
 });

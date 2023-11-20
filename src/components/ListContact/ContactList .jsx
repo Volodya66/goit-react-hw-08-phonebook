@@ -21,29 +21,25 @@ const dispatch = useDispatch()
 // dispatch(contactOperation.CreateFetchContacts())   
 // },[dispatch])
 
-const contact = useSelector(state => state.contacts.contact)
 
-
+const filter = useSelector(state => state.filter.filter)
 const contactsList = useSelector(state =>   state.contacts.contact);
-console.log('contactsList: ', contactsList);
 
-//? let filter = useSelector(state =>  state.filter.filter);
+
+
 
     
 const handlerContactDelete = (evt) => {
 const deleteContactId = evt.currentTarget.getAttribute("id");
-console.log('deleteContactId: ', deleteContactId);
-// // console.log('deleteContactId: ', deleteContactId);
 dispatch(contactOperation.deleteContact(deleteContactId));
-
-return
+return;
 }
     
-// const getContacts = (contactsList, filter) => {
+const getContacts = (contactsList, filter) => {
 
-// return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
-// };
+};
 
 const addFavorite = (evt) =>{
     const pass = evt.currentTarget.getAttribute("favorite")
@@ -75,13 +71,13 @@ switch (pass) {
 // dispatch(favoriteContact({id : contactIdFavorite, status : objFavorite.favorite}))
 }   
 
-// const data = getContacts(contactsList, filter);
-// const filterAB = [...data].sort((firstStudent, secondStudent) =>firstStudent.name.localeCompare(secondStudent.name));
+const data = getContacts(contactsList, filter);
+const filterAB = [...data].sort((firstStudent, secondStudent) =>firstStudent.name.localeCompare(secondStudent.name));
 
 return (
 
         <ul className={css.list}>
-            { contact.map(contact => 
+            { filterAB.map(contact => 
                 <li className={css.item} key={contact.id}>
                     <ul className={css.listDataUser}>
                         <li><p className={css.name}>     {contact.name}</p></li>
