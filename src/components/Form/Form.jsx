@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { useDispatch ,useSelector} from 'react-redux';
 // import { addNewContact } from 'redux/slice';
 import * as contactsAPI from '../../redux/contact/contacts-api'
+import *as contactOperations from '../../redux/contact/contactOperations'
 
 import Input from '../Input/Input'
 import Button from '../Button/Button'
@@ -51,7 +52,7 @@ console.log('newContacts: ', newContacts);
    return
   };
 
-    dispatch(contactsAPI.fetchAddNewContact(newContacts))
+    dispatch(contactOperations.newContact(newContacts))
         
     action.resetForm();
     }

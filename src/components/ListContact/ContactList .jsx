@@ -72,7 +72,8 @@ switch (pass) {
 }   
 
 const data = getContacts(contactsList, filter);
-const filterAB = [...data].sort((firstStudent, secondStudent) =>firstStudent.name.localeCompare(secondStudent.name));
+    const filterAB = [...data].sort((firstStudent, secondStudent) =>
+        firstStudent.name.localeCompare(secondStudent.name));
 
 return (
 
