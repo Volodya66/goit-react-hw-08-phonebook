@@ -2,7 +2,7 @@ import css from './InputFilter.module.css'
 
 import { useDispatch } from 'react-redux'
 
-import { setStatusFilter } from 'redux/filterSlice'
+import { setStatusFilter } from 'redux/contact/sliceFilter'
 
 export default function Filter() {
 

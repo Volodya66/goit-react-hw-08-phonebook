@@ -17,9 +17,7 @@ export default function ContactList () {
 
 const dispatch = useDispatch()
 
-// useEffect(() => {
-// dispatch(contactOperation.CreateFetchContacts())   
-// },[dispatch])
+
 
 
 const filter = useSelector(state => state.filter.filter)
@@ -33,13 +31,29 @@ return;
     
 const getContacts = (contactsList, filter) => {
 
-return contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
 
+const filteredContacts = contactsList.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+const filterAB = [...filteredContacts].sort((firstStudent, secondStudent) =>firstStudent.name.localeCompare(secondStudent.name));
+const sortedContacts = filterAB.sort((a, b) => {
+  // Поміняйте порядок вище, якщо об'єкт 'a' має favorite: true, а об'єкт 'b' - favorite: false
+  if (a.favorite && !b.favorite) {
+    return -1;
+  }
+  // Поміняйте порядок нижче, якщо об'єкт 'b' має favorite: true, а об'єкт 'a' - favorite: false
+  if (!a.favorite && b.favorite) {
+    return 1;
+  }
+  // Якщо обидва об'єкта мають favorite: true або favorite: false, то порівнюємо їхні інші властивості (наприклад, name)
+  return a.name.localeCompare(b.name);
+});
+
+    
+return sortedContacts
 };
 
 const addFavorite = (evt) =>{
     const pass = evt.currentTarget.getAttribute("favorite")
-    console.log('pass: ', pass);
+
     const idFavorite = evt.currentTarget.getAttribute("id");
 // console.log('pass: ', pass);
 
@@ -56,26 +70,16 @@ switch (pass) {
     default:return
 }
     
-    
 
-
-// console.log('evt.currentTarget: ', evt.currentTarget);
-// console.log('favorite value: ', evt.currentTarget.getAttribute("favorite"));
-// dispatch(contactOperation.fetchContactById(idFavorite))
-
-// const objFavorite =  contactsList.find(contact => contact.id === contactIdFavorite);
-// dispatch(favoriteContact({id : contactIdFavorite, status : objFavorite.favorite}))
 }   
 
 const data = getContacts(contactsList, filter);
-    const filterAB = [...data].sort((firstStudent, secondStudent) =>
-        firstStudent.name.localeCompare(secondStudent.name));
 
 return (
     <>
         {/* {loading && ()}  */}
         <ul className={css.list}>
-            { filterAB.map(contact => 
+            { data.map(contact => 
                 <li className={css.item} key={contact.id}>
                     <ul className={css.listDataUser}>
                         <li><p className={css.name}>     {contact.name}</p></li>

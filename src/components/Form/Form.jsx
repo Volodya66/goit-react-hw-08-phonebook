@@ -44,7 +44,7 @@ const handleSubmit = (values, action) => {
     number: number,
     favorite: false
   };
-console.log('newContacts: ', newContacts);
+// console.log('newContacts: ', newContacts);
   const namePerson = newContacts.name;
   const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
   if (condition) {

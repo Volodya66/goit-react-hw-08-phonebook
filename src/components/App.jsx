@@ -39,17 +39,6 @@ dispatch(contactOperation.createFetchContacts())
     
   </Routes>
 
-  {/* <Loyayt title={'Phone book'}> */}
-  {/* <h2>Phone book</h2>    */}
-  {/* <ContactForm /> */}
-        
-  {/* <h2>Contacts</h2> */}
-  
-  {/* <Filter 
-  value={filter} 
-  parameterTracker={filterContacts} /> */}
-  {/* <ContactList /> */}
- {/* </Loyayt> */}
 </div>
     )
 }

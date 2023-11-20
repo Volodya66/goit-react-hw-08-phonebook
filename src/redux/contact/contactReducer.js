@@ -53,8 +53,6 @@ const contact = createSlice({
     state.error = action.payload;
     })
     .addCase(newContact.fulfilled, (state, action) => {
-        console.log('action: ', action);
-        console.log('action: ', action);
     state.contact.push(action.payload);   
     })
   }

@@ -56,7 +56,6 @@ export async function fetchAddNewContact(contact) {
      const { data } = await axios.post('/contacts', contact,{
     headers: {'Content-Type': 'application/json',},
 });
-console.log('data: ', data);
     return data 
     } catch (error) {
         return isRejectedWithValue(error)
