@@ -24,11 +24,7 @@ const dispatch = useDispatch()
 
 const filter = useSelector(state => state.filter.filter)
 const contactsList = useSelector(state =>   state.contacts.contact);
-
-
-
-
-    
+   
 const handlerContactDelete = (evt) => {
 const deleteContactId = evt.currentTarget.getAttribute("id");
 dispatch(contactOperation.deleteContact(deleteContactId));
@@ -88,9 +84,11 @@ return (
                     
                     {/* <Button click={handlerContactDelete} id={contact.id} type={'button'} text={'Delete'} /> */}
                     <ul className={css.listBtn}>
-                        <li> <BtnSvg>
+                        <li> <a href={`tel:${css.number}`}>
+                            <BtnSvg>
                             <ImagesPhoneCall className={css.svg }  width='18' height='18' />
-                        </BtnSvg>
+                            </BtnSvg>
+                            </a>
                         </li>
                         <li><BtnSvg>
                             <ImagesStar className={css.svg + (contact.favorite ? ' favorite' : '')} id={contact.id}
