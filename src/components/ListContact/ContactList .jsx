@@ -89,7 +89,7 @@ return (
                     
                     {/* <Button click={handlerContactDelete} id={contact.id} type={'button'} text={'Delete'} /> */}
                     <ul className={css.listBtn}>
-                        <li> <a href={`tel:${css.number}`}>
+                        <li> <a href={`tel:${contact.number}`}>
                             <BtnSvg>
                             <ImagesPhoneCall className={css.svg }  width='18' height='18' />
                             </BtnSvg>
