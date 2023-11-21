@@ -52,19 +52,18 @@ return sortedContacts
 };
 
 const addFavorite = (evt) =>{
+    
     const pass = evt.currentTarget.getAttribute("favorite")
-
     const idFavorite = evt.currentTarget.getAttribute("id");
-// console.log('pass: ', pass);
 
 switch (pass) {
     case "no":
-        dispatch(contactOperation.fetchContactById(idFavorite));
+     dispatch(contactOperation.fetchContactById(idFavorite));
         ;
-     break;
+    break;
      
     case "yes":
-        dispatch(contactOperation.favoriteFalse(idFavorite));
+     dispatch(contactOperation.favoriteFalse(idFavorite));
     break;
     
     default:return
@@ -77,7 +76,6 @@ const data = getContacts(contactsList, filter);
 
 return (
     <>
-        {/* {loading && ()}  */}
         <ul className={css.list}>
             { data.map(contact => 
                 <li className={css.item} key={contact.id}>
@@ -87,7 +85,7 @@ return (
                     </ul>
                     
                     
-                    {/* <Button click={handlerContactDelete} id={contact.id} type={'button'} text={'Delete'} /> */}
+                    
                     <ul className={css.listBtn}>
                         <li> <a href={`tel:${contact.number}`}>
                             <BtnSvg>
@@ -98,7 +96,6 @@ return (
                         <li><BtnSvg>
                             <ImagesStar className={css.svg + (contact.favorite ? ' favorite' : '')} id={contact.id}
                             favorite={contact.favorite? "yes": "no"}  onClick={addFavorite}  width='18' height='18' /> 
-                        {/* onClick={addFavorite} */}
                         </BtnSvg>
                         </li>
                         <li><BtnSvg>
