@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 import Register from "pages/Register";
 import Login from "pages/Login";
+import RegisterRoute from "./PablicRoute";
 import AuthNav from "./AuthNav";
 import HomeNav from "./HomeNav";
 import UserNav from "./UserNav";
@@ -16,9 +17,7 @@ import { currentUser } from "redux/connectionsAPI/auth-operations";
 export default function App  () {
 const isLoggedIn = useSelector(state  => state.users.isLoggedIn);
 
-  
-  
- const dispatch = useDispatch()
+const dispatch = useDispatch();
 
 useEffect(() => {
 dispatch(currentUser())   
@@ -26,27 +25,20 @@ dispatch(currentUser())
 
    return (
       <div className="wrapper" >
-       
-  {/* <h1 className='titleWrapper'> Phone book </h1> */}
-  
-   <ul className='listNavigate'>
-    {/* <li className='listNavigateItem'> <NavLink  className='pageNavigate' to='/'> Add contact</NavLink></li>
-    <li className='listNavigateItem'> <NavLink className='pageNavigate' to='/contact'>Find contact</NavLink> </li> */}
-         
-    <li className='listNavigateItem'> <NavLink  className='pageNavigate' to='/'> Home </NavLink> </li>
-    {!isLoggedIn ? (<AuthNav/>) :(<UserNav/>)}
- 
-  </ul >
-
-       
- <Routes >
-  
-         
-    <Route path="/" element={<HomeNav/>} />   
-    <Route exact path="/register" element={ <Register/>} /> 
-    <Route path="/login" element={ <Login/>} />  
       
-
+  <ul className='listNavigate'>
+  <li className='listNavigateItem'> <NavLink  className='pageNavigate' to='/'> Home </NavLink> </li>
+  {!isLoggedIn ? (<AuthNav/>) :(<UserNav/>)}
+  </ul >
+  <Routes >  
+    <Route exact path="/" element={<HomeNav/>} />   
+    {/* <Route path="/register" element={ <Register/>} /> */}
+    <Route path="/register" element={<RegisterRoute redirectTo="/" component={<Register/>} />} />  
+    <Route path="/login" element={<RegisterRoute redirectTo="/" component={<Login/>} />} />  
+{/*     
+     <PublicRoute>
+      <Route path="/login" element={ <Login/>} />  
+     </PublicRoute> */}
   </Routes>
 
 </div>

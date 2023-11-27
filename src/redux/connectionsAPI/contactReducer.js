@@ -21,6 +21,7 @@ name: 'authorization',
       state.user = user
       state.token = token;
       state.loading = false;
+      state.isLoggedIn = true;
     })
     .addCase(registerUsers.rejected, (state, action) => {
       state.loading = false;
@@ -52,9 +53,7 @@ name: 'authorization',
       state.isLoggedIn = false;
       state.loading = false; 
 
-      // state.contact.contacts = null;
       state.contacts = null;
-      
     })
     .addCase(logOut.rejected, (state, action) => {
       console.log('action: ', action);
@@ -65,11 +64,7 @@ name: 'authorization',
      state.loadingState = true;
     }) 
     .addCase(currentUser.fulfilled, (state, {payload}) => {
-      // console.log('action: ', payload);
-    state.user = payload
-
-    // state.contacts.push(payload);
-    // state.contacts = payload; 
+    state.user = payload; 
     state.isLoggedIn = true;
     })
     .addCase(currentUser.rejected, (state) => {
