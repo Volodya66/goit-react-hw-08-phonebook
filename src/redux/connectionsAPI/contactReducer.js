@@ -65,7 +65,7 @@ name: 'authorization',
      state.loadingState = true;
     }) 
     .addCase(currentUser.fulfilled, (state, {payload}) => {
-      console.log('action: ', payload);
+      // console.log('action: ', payload);
     state.user = payload
 
     // state.contacts.push(payload);

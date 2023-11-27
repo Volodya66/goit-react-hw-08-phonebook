@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logOut } from "redux/connectionsAPI/auth-operations";
@@ -11,8 +11,8 @@ const userName = useSelector(state  => state.users.user.name)
 
 return (
     <>
-    <li className='listNavigateItem'>
-            <NavLink className='pageNavigate' to='/login'> Velcome : {userName}  </NavLink>
+    <li className='NavigateName'>
+          <p className="NavigateText">   Velcome : {userName} </p>
             <button type="button" onClick={()=>{dispatch(logOut())}}>LogOut</button>
     </li> 
     </>

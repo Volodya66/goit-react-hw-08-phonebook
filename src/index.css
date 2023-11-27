@@ -18,6 +18,12 @@ code {
 * {
   box-sizing: border-box;
 }
+
+p{
+  margin: 0;
+  padding: 0;
+}
+
 .wrapper {
   margin-top: 10px;
 
@@ -50,6 +56,7 @@ code {
     display: flex;
     /* justify-content: space-between; */
     margin-bottom: 22px;
+    align-items: baseline;
 }
 
 .listNavigateItem .pageNavigate.active {
@@ -67,6 +74,7 @@ code {
 font-weight: 500;
 font-size: 22px;
 line-height: 26.4px;
+
 }
 
 .pageNavigate{
@@ -75,6 +83,22 @@ font-weight: 500;
 font-size: 22px;
 line-height: 26.4px;
 color: #000000;
+
+}
+
+.NavigateName{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 8px;
+  margin-left: auto;
+flex-wrap: wrap;
+}
+
+.NavigateText{
+display: flex;
+
+
 }
 
 ::-webkit-scrollbar {
