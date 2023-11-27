@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { isRejectedWithValue } from "@reduxjs/toolkit";
+// import { isRejectedWithValue } from "@reduxjs/toolkit";
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 //? https://connections-api.herokuapp.com
