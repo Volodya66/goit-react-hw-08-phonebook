@@ -1,9 +1,7 @@
 
-
-
 import {useSelector, useDispatch} from 'react-redux'
 import { useState } from 'react';
-// import * as contactOperation from 'redux/contact/contactOperations'
+
 import BtnSvg from 'components/Button/ButtonSvg'
 import Modals from 'components/Modal/ModalAddCont';
 
@@ -18,21 +16,12 @@ import { useEffect } from 'react'
 import { getContactUser,deleteContact } from 'redux/contactAPI/contactOperations';
 
 
-// const initialStates = [
-//     { id: 'id-1', name: 'Alyona Udod', number: '459-12-56', favorite: false },
-//     { id: 'id-5', name: 'Nadiia Bulmak', number: '463-21-29', favorite: false },
-//     { id: 'id-2', name: 'Dad', number: '443-89-12', favorite: false },
-//     { id: 'id-3', name: 'Mom ❤', number: '645-17-79', favorite: false },
-//     { id: 'id-4', name: 'Natalia Valko', number: '227-91-26', favorite: false },
-        
-// ];
-
-
-export default function ContactList () {
+export default function ContactList() {
+    
 const [isModalOpen, setIsModalOpen] = useState(false);
 const dispatch = useDispatch()
 const contact = useSelector(state => state.contact.contacts)
-console.log('contact: ', contact);
+
 useEffect(() => {
   
   dispatch(getContactUser())  
@@ -48,7 +37,6 @@ useEffect(() => {
 const handlerContactDelete = (evt) => {
 
 const deleteContactId = evt.currentTarget.getAttribute("id");
-console.log('deleteContactId: ', deleteContactId);
 dispatch(deleteContact(deleteContactId));
 return;
 }

@@ -43,11 +43,10 @@ name: 'contacts',
     .addCase(deleteContact.pending, (state) => {
      state.loadingState = true;
     }) 
-    .addCase(deleteContact.fulfilled, (state, action) => {
-      console.log('action: ', action);
-
-    // state.contacts.push(payload);
-    // state.contacts = payload; 
+    .addCase(deleteContact.fulfilled, (state, {payload}) => {
+    const deleteUserId = payload.id ;
+    const idx = state.contacts.findIndex(contact => contact.id === deleteUserId );
+    state.contacts.splice(idx,1);
     state.loadingState = false;
     })
     .addCase(deleteContact.rejected, (state) => {

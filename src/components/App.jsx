@@ -14,8 +14,7 @@ import { currentUser } from "redux/connectionsAPI/auth-operations";
 
 
 export default function App  () {
-const isLoggedIn = useSelector(state  => state.users.isLoggedIn)
-console.log('isLoggedIn: ', isLoggedIn);
+const isLoggedIn = useSelector(state  => state.users.isLoggedIn);
 
   
   
@@ -44,7 +43,7 @@ dispatch(currentUser())
   
          
     <Route path="/" element={<HomeNav/>} />   
-    <Route path="/register" element={ <Register/>} /> 
+    <Route exact path="/register" element={ <Register/>} /> 
     <Route path="/login" element={ <Login/>} />  
       
 
