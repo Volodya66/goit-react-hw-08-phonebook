@@ -3,7 +3,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from "yup";
 import { createNewContact } from 'redux/contactAPI/contactOperations';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import *as contactOperations from '../../../redux/contact/contactOperations'
 
@@ -22,7 +22,8 @@ const schema = Yup.object().shape({
 export default function ContactForm ()  {
 
 const dispatch = useDispatch();
-// const contactsList = useSelector(state =>   state.contacts.contact);
+const contactsList = useSelector(state =>   state.contact.contacts);
+// console.log('contactsList: ', contactsList);
 
   
 const handleSubmit = (values, action) => {
@@ -35,12 +36,12 @@ const handleSubmit = (values, action) => {
         number: number,
     };
     // console.log('newContacts: ', newContacts);
-    //   const namePerson = newContacts.name;
-    //   const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
-    //   if (condition) {
-        //    alert(`${namePerson} is already in contacts`);
-        //    return
-        //   };
+      const namePerson = newContacts.name;
+      const condition = contactsList.some(contact => contact.name.toLowerCase() === namePerson.toLowerCase());
+      if (condition) {
+           alert(`${namePerson} is already in contacts`);
+           return
+          };
         
         dispatch(createNewContact(newContacts))
         
