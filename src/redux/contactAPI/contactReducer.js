@@ -7,9 +7,14 @@ const contact = createSlice({
 name: 'contacts',   
   initialState: {
     contacts: [], 
-    loadingState:false,
+    loadingState: false,
+    filter: '',
   }, 
-  
+  reducers: {
+     setStatusFilter(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) =>{
    builder
    .addCase(getContactUser.pending, (state) => {
@@ -57,5 +62,5 @@ name: 'contacts',
   
 })
 
-
+export const { setStatusFilter } = contact.actions;
 export default contact.reducer;

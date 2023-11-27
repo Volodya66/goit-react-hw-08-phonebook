@@ -38,16 +38,13 @@ name: 'authorization',
       state.loading = false; 
     })
     .addCase(loginUsers.rejected, (state, action) => {
-      console.log('action: ', action);
-      state.isLoggedIn = false
+      state.isLoggedIn = false;
     })
 
     .addCase(logOut.pending, (state) => {
     state.loading = true; 
     }) 
     .addCase(logOut.fulfilled, (state, action) => {
-      console.log('state: ', state);
-      // const { token, user } = action.payload;
       state.user = {name: null, email: null}
       state.token = null;
       state.isLoggedIn = false;
@@ -56,19 +53,18 @@ name: 'authorization',
       state.contacts = null;
     })
     .addCase(logOut.rejected, (state, action) => {
-      console.log('action: ', action);
       state.isLoggedIn = false
     })
          // ????
     .addCase(currentUser.pending, (state) => {
-     state.loadingState = true;
+     state.loading = true;
     }) 
     .addCase(currentUser.fulfilled, (state, {payload}) => {
     state.user = payload; 
     state.isLoggedIn = true;
     })
     .addCase(currentUser.rejected, (state) => {
-      state.loadingState = false;
+      state.isLoggedIn = false;
     })  
   }
   

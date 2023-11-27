@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
 import connectionsReducer from './connectionsAPI/contactReducer'
-import contactReducer from './contactAPI/contactReduser'
+import contactReducer from './contactAPI/contactReducer'
 
 import {
   persistStore,

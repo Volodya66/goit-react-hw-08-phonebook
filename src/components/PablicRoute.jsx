@@ -10,10 +10,6 @@ const isLoggedIn = useSelector(state  => state.users.isLoggedIn);
 
     return isLoggedIn ? <Navigate to={redirectTo} /> : Component
 
-//   <Route {...routeProps}>
-//    {isLoggedIn? <Navigate to="/" /> : children} 
-//   </Route>
-    
 
 
 
