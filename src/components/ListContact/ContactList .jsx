@@ -95,7 +95,7 @@ return (
 
        {isModalOpen && (
         <Modals onClose={() => setIsModalOpen(false)}>
-         <ContactForm/>
+                <ContactForm closeModal={() => setIsModalOpen(false)} />
         </Modals>
       )}
 

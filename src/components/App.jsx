@@ -32,13 +32,8 @@ dispatch(currentUser())
   </ul >
   <Routes >  
     <Route exact path="/" element={<HomeNav/>} />   
-    {/* <Route path="/register" element={ <Register/>} /> */}
     <Route path="/register" element={<RegisterRoute redirectTo="/" component={<Register/>} />} />  
     <Route path="/login" element={<RegisterRoute redirectTo="/" component={<Login/>} />} />  
-{/*     
-     <PublicRoute>
-      <Route path="/login" element={ <Login/>} />  
-     </PublicRoute> */}
   </Routes>
 
 </div>

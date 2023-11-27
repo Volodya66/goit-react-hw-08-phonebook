@@ -19,7 +19,8 @@ const schema = Yup.object().shape({
 
 
 
-export default function ContactForm ()  {
+export default function ContactForm ({closeModal})  {
+  console.log('closeModal: ', closeModal);
 
 const dispatch = useDispatch();
   const contactsList = useSelector(state => state.contact.contacts);
@@ -51,7 +52,8 @@ const handleSubmit = (values, action) => {
   };
 
   const onClickCancel = () => {
-    alert('Хиии, потицяй трошки пальчиками, я лінива телефонна книга')
+    alert('Хиии, потицяй трошки пальчиками, я лінива телефонна книга');
+    closeModal()
   };
 
     return (

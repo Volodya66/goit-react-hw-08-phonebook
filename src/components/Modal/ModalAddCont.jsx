@@ -35,7 +35,7 @@ return(
   <div className={css.Overlay} onClick={closeModal} >
         <div className={css.Modal}>
             <h1 className={css.text} >Add new contact</h1>
-        {children}
+        {children }
       </div>
   </div>
 )
