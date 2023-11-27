@@ -38,7 +38,7 @@ export default function Input() {
           {/* <p>Number</p>   */}
          <Field className={css.inp}  placeholder="Password" type="password" name="password" />
          <ErrorMessage name="password">
-                 {() => <div className={css.error}>Please enter your password</div>}
+                 {() => <div className={css.error}>Please enter your sting</div>}
          </ErrorMessage>
       </label>
          
