@@ -44,7 +44,6 @@ const handleSubmit = (values, action) => {
         
         dispatch(createNewContact(newContacts))
         
-    console.log('newContacts: ', newContacts);
     action.resetForm();
     }
   };
@@ -62,7 +61,6 @@ const handleSubmit = (values, action) => {
             number: ''
           }}
           onSubmit={handleSubmit}>
-          {/* <h1>Add new contact</h1> */}
           <Form className={css.forma} autoComplete="off">
             
             <Input />

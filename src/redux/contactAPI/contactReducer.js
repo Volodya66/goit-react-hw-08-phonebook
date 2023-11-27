@@ -36,9 +36,7 @@ name: 'contacts',
      state.loadingState = true;
     }) 
     .addCase(createNewContact.fulfilled, (state, {payload}) => {
-    console.log('payload: ', payload);
     state.contacts.push(payload);
-    // state.contacts = payload; 
     state.loadingState = false;
     })
     .addCase(createNewContact.rejected, (state) => {

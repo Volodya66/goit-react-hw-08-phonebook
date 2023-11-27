@@ -20,8 +20,9 @@ export default function ContactList() {
     
 const [isModalOpen, setIsModalOpen] = useState(false);
 const dispatch = useDispatch()
-const contact = useSelector(state => state.contact.contacts);
-const filter = useSelector(state => state.contact.filter);
+const contact = (useSelector(state => state.contact.contacts)?? []);
+const filter = (useSelector(state => state.contact.filter) ?? " " );
+
 
 useEffect(() => {
   
@@ -52,7 +53,7 @@ const data = getContacts(contact, filter);
 return (
     <>
         <ul className={css.list}>
-            {data && data.map(contact => 
+            { data.map(contact => 
                 <li className={css.item} key={contact.id}>
                     <ul className={css.listDataUser}>
                         <li><p className={css.name}>     {contact.name}</p></li>
@@ -68,12 +69,6 @@ return (
                             </BtnSvg>
                             </a>
                         </li>
-                        {/* <li><BtnSvg>
-                            <ImagesStar  id={contact.id}
-                            // favorite={contact.favorite? "yes": "no"}  onClick={addFavorite} 
-                            width='18' height='18' /> 
-                        </BtnSvg>
-                        </li> */}
                         <li><BtnSvg>
                             <ImagesDelete id={contact.id} onClick={handlerContactDelete}
                                 className={css.svg} width='18' height='18' /> 
