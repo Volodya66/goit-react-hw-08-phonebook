@@ -14,12 +14,13 @@ import ContactForm from 'components/FormAddContact/FormAddContact/FormAddContact
 import { useEffect } from 'react'
 
 import { getContactUser,deleteContact } from 'redux/contactAPI/contactOperations';
-
+import { LoaderDelete } from 'components/Loader/Loader';
 
 export default function ContactList() {
     
 const [isModalOpen, setIsModalOpen] = useState(false);
-const dispatch = useDispatch()
+const dispatch = useDispatch();
+const delContactLoader = useSelector(state => state.contact.loadingDeleteContact);
 const contact = (useSelector(state => state.contact.contacts)?? []);
 const filter = (useSelector(state => state.contact.filter) ?? " " );
 
@@ -60,9 +61,15 @@ return (
                         <li><p className={css.number}>  {contact.number} </p> </li>
                     </ul>
                     
-                    
+                  
                     
                     <ul className={css.listBtn}>
+                          
+                        <li>
+                        <div className={css.loaderDeleteContact}>
+                            {delContactLoader ? (<LoaderDelete/>): ''}
+                        </div>
+                        </li>
                         <li> <a href={`tel:${contact.number}`}>
                             <BtnSvg>
                             <ImagesPhoneCall className={css.svg }  width='18' height='18' />

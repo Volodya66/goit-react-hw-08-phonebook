@@ -8,6 +8,9 @@ name: 'contacts',
   initialState: {
     contacts: [], 
     loadingState: false,
+    loadingDeleteContact: false,
+
+    loadingAddContact: false,
     filter: '',
   }, 
   reducers: {
@@ -33,27 +36,27 @@ name: 'contacts',
     })
     // ????
     .addCase(createNewContact.pending, (state) => {
-     state.loadingState = true;
+     state.loadingAddContact = true;
     }) 
     .addCase(createNewContact.fulfilled, (state, {payload}) => {
     state.contacts.push(payload);
-    state.loadingState = false;
+    state.loadingAddContact = false;
     })
     .addCase(createNewContact.rejected, (state) => {
-      state.loadingState = false;
+      state.loadingAddContact = false;
     })  
     // ????
     .addCase(deleteContact.pending, (state) => {
-     state.loadingState = true;
+     state.loadingDeleteContact = true;
     }) 
     .addCase(deleteContact.fulfilled, (state, {payload}) => {
     const deleteUserId = payload.id ;
     const idx = state.contacts.findIndex(contact => contact.id === deleteUserId );
     state.contacts.splice(idx,1);
-    state.loadingState = false;
+    state.loadingDeleteContact = false;
     })
     .addCase(deleteContact.rejected, (state) => {
-      state.loadingState = false;
+      state.loadingDeleteContact = false;
     }) 
   
   }

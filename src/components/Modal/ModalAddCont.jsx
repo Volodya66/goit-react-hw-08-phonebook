@@ -8,7 +8,6 @@ export default function Modals({onClose ,children})  {
 
 useEffect(()=> {
   const handleKeyDown= (e) => {
-    console.log('e: ', e.code);
   if (e.code === 'Escape') {
     onClose();
 };

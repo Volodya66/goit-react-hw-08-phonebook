@@ -22,8 +22,9 @@ const schema = Yup.object().shape({
 export default function ContactForm ()  {
 
 const dispatch = useDispatch();
-const contactsList = useSelector(state =>   state.contact.contacts);
-// console.log('contactsList: ', contactsList);
+  const contactsList = useSelector(state => state.contact.contacts);
+  const loadContact = useSelector(state => state.contact.loadingAddContact);
+
 
   
 const handleSubmit = (values, action) => {
@@ -69,7 +70,7 @@ const handleSubmit = (values, action) => {
   
             <ul className={css.listBtn}>
               <li><Button onClick={onClickCancel} id='1' type={'button'} styles1={'style'} text={'Cancel'} /></li>
-              <li><Button type={'submit'} id='2' styles1={'style'} styles2={'blue'} text={'Save'} /></li>
+              <li><Button type={'submit'} id='2' styles1={'style'} styles2={'blue'} text={ loadContact? "Loading...":"Save" } /></li>
             </ul>
     
           </Form>

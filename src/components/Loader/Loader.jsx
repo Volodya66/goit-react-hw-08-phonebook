@@ -23,3 +23,26 @@ export default function Loader() {
   </div>          
 )
 }
+
+export  function LoaderDelete() {
+
+
+    return (
+        <div style={
+            {
+                display: 'flex',
+                justifyContent: 'center',
+            }
+        
+        }>
+    <RotatingLines
+  strokeColor="grey"
+  strokeWidth="3"
+  animationDuration="0.75"
+  width="18"
+  
+  visible={true}
+    />
+  </div>          
+)
+}
