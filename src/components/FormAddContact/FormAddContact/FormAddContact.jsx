@@ -20,7 +20,6 @@ const schema = Yup.object().shape({
 
 
 export default function ContactForm ({closeModal})  {
-  console.log('closeModal: ', closeModal);
 
 const dispatch = useDispatch();
   const contactsList = useSelector(state => state.contact.contacts);
