@@ -48,12 +48,19 @@ code {
     margin: 0;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-bottom: 22px;
 }
 
 .listNavigateItem .pageNavigate.active {
   color: #41F3D3;
+}
+
+.listNavigateItem:nth-child(2){
+  margin-left: auto;
+}
+.listNavigateItem:nth-child(3) {
+  margin-left: 18px;
 }
 
 .listNavigateItem {

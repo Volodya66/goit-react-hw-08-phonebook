@@ -1,13 +1,14 @@
 
 import css from './ButtonSvg.module.css'
 
-export default function BtnSvg ({onClick,children}) {
+export default function BtnSvg ({children}) {
+   
   
 return (
     
     <>
     
-        <button className={css.svg} type="button" onClick={onClick} >{ children}</button>
+        <button className={css.svg} type="button"  >{ children}</button>
     
     
     </>

@@ -1,0 +1,118 @@
+.container{
+    /* padding: 30px; */
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 330px;
+}
+
+p{
+margin: 0;
+font-size: 18px;
+margin-bottom: 16px;
+}
+
+.label:nth-child(1) {
+    margin-bottom: 10px;
+}
+
+.label:nth-child(2) {
+    margin-bottom: 10px;
+}
+.inp{
+    width: 320px;
+    height: 39px;
+    border-radius: 50px;
+    border: 1px solid #828282;
+    outline: none;
+
+    display: block;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 19.2px;
+
+    padding: 10px 16px ;
+   
+}
+
+/* @keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.listNum {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    column-gap: 6px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+.itemNum {
+    font-size: 20px;
+    margin: 5px;
+    animation: floatUpDown 3s infinite;
+}
+
+
+.animationDelay1 {
+    animation-delay: 0.2s;
+}
+
+.animationDelay2 {
+    animation-delay: 0.4s;
+}
+
+.animationDelay3 {
+    animation-delay: 0.6s;
+}
+
+.animationDelay4 {
+    animation-delay: 0.8s;
+}
+
+.animationDelay5 {
+    animation-delay: 1s;
+}
+
+.animationDelay6 {
+    animation-delay: 1.2s;
+}
+
+.animationDelay7 {
+    animation-delay: 1.4s;
+}
+
+.animationDelay8 {
+    animation-delay: 1.6s;
+}
+
+.animationDelay9 {
+    animation-delay: 1.8s;
+}
+
+.animationDelay10 {
+    animation-delay: 2s;
+}
+
+.animationDelay11 {
+    animation-delay: 2.4s;
+}
+
+.animationDelay12 {
+    animation-delay: 2.6s;
+}
+
+
+.animationDelay {
+    animation: floatUpDown 2s infinite;
+} */
+

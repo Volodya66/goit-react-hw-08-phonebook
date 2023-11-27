@@ -1,6 +1,6 @@
 
 
-import ContactForm from "components/Form/Form"
+import ContactForm from "components/FormRegister/Form/FormRegister"
 
 export default function HomeAddContacts ()  {
   

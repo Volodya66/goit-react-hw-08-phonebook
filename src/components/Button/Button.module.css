@@ -14,10 +14,35 @@ color: #000000;
 
 width: 150px;
 height: 39px;
-
+outline: none;
 }
 
 .blue{
     background-color: #41F3D3;
     color: #000000;
+    outline: none;
+}
+
+.styleContactList{
+font-size: 14px;
+font-weight: 300;
+line-height: 19.2px;
+
+background-color: transparent;
+
+padding: 10px 30px;
+border-radius: 50px;
+
+border: 1px solid #828282;
+color: #000000;
+
+/* width: 150px; */
+height: 39px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+background-color: #41F3D3;
+color: #000000;
+outline: none;
+
 }

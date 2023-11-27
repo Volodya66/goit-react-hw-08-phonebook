@@ -1,17 +1,6 @@
 import { Field,ErrorMessage  } from 'formik'
 
-import css from './Input.module.css'
-
-
-// const NumberInput = () => (
-//   <ul className={css.listNum}>
-//     {Array.from('380954835493').map((digit, index) => (
-//       <li key={index} className={`${css.itemNum} ${css[`animationDelay${index + 1}`]}`}>
-//         {digit}
-//       </li>
-//     ))}
-//   </ul>
-// );
+import css from './InputAddContact.module.css';
 
 export default function Input() {
     
@@ -22,11 +11,6 @@ export default function Input() {
          <Field  placeholder='Name' className={css.inp}  type="text" name="name" />
          <ErrorMessage  name='name'/>
       </label>
-      {/* <ul className={css.listNum}>
-       {Array.from('380954835493').map((digit, index) => (
-       <li key={index} className={`${css.itemNum}  ${css[`animationDelay${index + 1}`]}`}>{digit}</li>
-       ))}
-      </ul> */}
       <label className={css.label} htmlFor="number">
           {/* <p>Number</p>   */}
          <Field className={css.inp}  placeholder="Number" type="tel" name="number" />
