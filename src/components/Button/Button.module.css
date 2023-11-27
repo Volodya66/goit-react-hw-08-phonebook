@@ -46,3 +46,26 @@ color: #000000;
 outline: none;
 
 }
+
+.btnLogout{
+font-size: 13px;
+font-weight: 300;
+line-height: 19.2px;
+
+background-color: transparent;
+
+padding: 4px 16px;
+border-radius: 50px;
+
+border: 1px solid #828282;
+color: #000000;
+
+max-width: 100px;
+height: 39px;
+outline: none;
+
+background-color: #41F3D3;
+color: #000000;
+
+
+}

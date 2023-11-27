@@ -56,7 +56,9 @@ p{
     display: flex;
     /* justify-content: space-between; */
     margin-bottom: 22px;
-    align-items: baseline;
+    /* align-items: baseline; */
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .listNavigateItem .pageNavigate.active {
@@ -74,7 +76,9 @@ p{
 font-weight: 500;
 font-size: 22px;
 line-height: 26.4px;
-
+/* text-align: center; */
+display: flex;
+justify-content: center;
 }
 
 .pageNavigate{
@@ -83,22 +87,25 @@ font-weight: 500;
 font-size: 22px;
 line-height: 26.4px;
 color: #000000;
+display: flex;
+align-items: center;
 
 }
 
 .NavigateName{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   gap: 8px;
   margin-left: auto;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .NavigateText{
 display: flex;
-
-
+align-items: baseline;
 }
 
 ::-webkit-scrollbar {
