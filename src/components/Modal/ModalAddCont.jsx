@@ -1,33 +1,36 @@
 
 
-import { useEffect } from 'react';
+
 import css from './Modal.module.css'
 
 
 export default function Modals({onClose ,children})  {
 
-useEffect(()=> {
-  const handleKeyDown= (e) => {
-  if (e.code === 'Escape') {
-    onClose();
-};
-};
+// useEffect(()=> {
+//   const handleKeyDown= (e) => {
+//   if (e.code === 'Escape') {
+//     onClose();
+// };
+// };
 
-  window.addEventListener('keydown', handleKeyDown);
-  document.body.style.overflow = 'hidden';
+//   window.addEventListener('keydown', handleKeyDown);
+//   document.body.style.overflow = 'hidden';
 
-return ()=>{
+// return ()=>{
   
-  window.removeEventListener('keydown', handleKeyDown);
-  document.body.style.overflow = 'auto';
-}
+//   window.removeEventListener('keydown', handleKeyDown);
+//   document.body.style.overflow = 'auto';
+// }
   
-},[onClose]);
+// },[onClose]);
+
+
 
 
 const closeModal = (e) => {
     if (e.target === e.currentTarget) {
-     onClose(); 
+      alert('Хиии, потицяй трошки пальчиками, я лінива телефонна книга');
+
     };
   };
 

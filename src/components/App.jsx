@@ -1,5 +1,5 @@
 
-import { Route, NavLink, Routes } from "react-router-dom";
+import { Route, NavLink, Routes, Navigate } from "react-router-dom";
 
 import { useDispatch,useSelector  } from 'react-redux'
 import { useEffect } from "react";
@@ -34,6 +34,8 @@ dispatch(currentUser())
     <Route exact path="/" element={<HomeNav/>} />   
     <Route path="/register" element={<RegisterRoute redirectTo="/" component={<Register/>} />} />  
     <Route path="/login" element={<RegisterRoute redirectTo="/" component={<Login/>} />} />  
+    
+     <Route path="*" element={ <Navigate to='/'/>} />
   </Routes>
 
 </div>

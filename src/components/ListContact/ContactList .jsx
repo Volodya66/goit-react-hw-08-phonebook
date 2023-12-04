@@ -6,8 +6,8 @@ import BtnSvg from 'components/Button/ButtonSvg'
 import Modals from 'components/Modal/ModalAddCont';
 
 import {ReactComponent as ImagesDelete} from '../../images/delete.svg'
-import { ReactComponent as ImagesPhoneCall} from '../../images/phoneCall.svg'
-// import {ReactComponent as ImagesStar} from '../../images/star.svg'
+import { ReactComponent as ImagesPhoneCall } from '../../images/phoneCall.svg'
+
 import css from './ListContact.module.css'
 import Button from 'components/Button/Button'
 import ContactForm from 'components/FormAddContact/FormAddContact/FormAddContact';
@@ -19,6 +19,7 @@ import { LoaderDelete } from 'components/Loader/Loader';
 export default function ContactList() {
     
 const [isModalOpen, setIsModalOpen] = useState(false);
+const [deletingContactId, setDeletingContactId] = useState(null);
 const dispatch = useDispatch();
 const delContactLoader = useSelector(state => state.contact.loadingDeleteContact);
 const contact = (useSelector(state => state.contact.contacts)?? []);
@@ -34,6 +35,7 @@ useEffect(() => {
 
 const handlerContactDelete = (evt) => {
 const deleteContactId = evt.currentTarget.getAttribute("id");
+setDeletingContactId(deleteContactId);
 dispatch(deleteContact(deleteContactId));
 return;
 }
@@ -67,7 +69,10 @@ return (
                           
                         <li>
                         <div className={css.loaderDeleteContact}>
-                            {delContactLoader ? (<LoaderDelete/>): ''}
+                                {
+
+                                    deletingContactId===contact.id && delContactLoader ? (<LoaderDelete />) : ''
+                            }
                         </div>
                         </li>
                         <li> <a href={`tel:${contact.number}`}>
